@@ -1,6 +1,6 @@
 # Description
 
-> The name QuestBridge is still up for debate - please see below some suggestions in the 'Ideas for naming from ChatGPT' section
+> The name EurekaQuery is still up for debate - please see below some suggestions in the 'Ideas for naming from ChatGPT' section
 
 The **EurekaQuery** project aims to enhance the accessibility and analysis of scientific literature. By integrating Flask as the web framework and leveraging the OpenAI API, the platform specializes in transforming research questions, stated in natural language, into structured PubMed queries. **EurekaQuery** is designed to make scientific discoveries more accessible, catering to a wide audience, from seasoned researchers to those new to medical research.
 
