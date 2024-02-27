@@ -1,3 +1,3 @@
 docker:
-	docker build -t querymaster:alfa .
-	docker run --name querymaster -d -p 8080:8080 querymaster:alfa
+	docker build -t eurekaquery:alfa .
+	docker run --name eurekaquery -d -p 8080:8080 eurekaquery:alfa
