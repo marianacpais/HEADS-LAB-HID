@@ -1,7 +1,11 @@
 # Development environment commands
+
+app-dev:
+	python3 application.py
+
 docker:
 	docker build -f Dockerfile.dev -t eurekaquery:dev .
-	docker run --name eurekaquery-dev -d -p 5001:5000 -v "$(PWD)":/app eurekaquery:dev
+	docker run --name eurekaquery-dev --env-file ./.env -it -p 5001:5000 -v "$(PWD)":/app eurekaquery:dev
 
 docker-bash:
 	docker exec -w /app -it eurekaquery-dev /bin/bash

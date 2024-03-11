@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PICO Prompter</title>
+</head>
+
+<body>
+  <form method="post" action="/">
+    <label for="query">Enter your research question:</label><br>
+    <textarea id="query" name="query" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if response %}
+  <div>
+    <p>Response:</p>
+    <p>{{ response }}</p>
+  </div>
+  {% endif %}
+</body>
+
+</html>

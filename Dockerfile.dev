@@ -10,4 +10,4 @@ EXPOSE 5000
 
 ENV FLASK_DEBUG=1
 
-CMD ["python3", "application.py"]
+ENTRYPOINT [ "/bin/bash" ]
