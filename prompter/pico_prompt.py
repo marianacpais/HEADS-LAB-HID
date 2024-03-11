@@ -1,3 +1,5 @@
+import json
+
 from .abstract_prompt import AbstractPrompt
 
 class PICOPrompt(AbstractPrompt):
@@ -9,6 +11,17 @@ class PICOPrompt(AbstractPrompt):
     self.comparator = comparator
     self.outcome = outcome
     self.comment = comment
+
+  def parse_response(self, response):
+    try:
+      parsed_response = json.loads(response)
+      self.population = parsed_response["P"]
+      self.intervention = parsed_response["I"]
+      self.comparator = parsed_response["C"]
+      self.outcome = parsed_response["O"]
+      self.comment = parsed_response["comment"]
+    except:
+      self.comment = f"Invalid response structure. Response: {response}"
 
   def get_content(self):
     return {
