@@ -1,7 +1,10 @@
 # Development environment commands
 
-app-dev:
+app:
 	python3 application.py
+
+dev:
+	pytest-watch
 
 docker:
 	docker build -f Dockerfile.dev -t eurekaquery:dev .

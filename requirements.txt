@@ -1,6 +1,10 @@
 Flask==2.2.2
-
 gunicorn==21.2.0
 Werkzeug==2.2.2
 openai==1.13.3
+pymed==0.8.9
+pandas==2.2.1
+
+# Dev
 pytest==8.1.1
+pytest-watch==4.2.0

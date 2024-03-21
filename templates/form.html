@@ -4,19 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>PICO Prompter</title>
-  <style>
-    .response-box {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
   <p>USE AS EXAMPLE: How does the integration of digital health monitoring devices into routine patient care influence
-    the management of
-    chronic diseases and improve patient outcomes?</p>
+    the management of chronic diseases and improve patient outcomes?</p>
   <form method="post" action="/">
     <label for="query">Enter your research question:</label><br>
     <textarea id="query" name="query" rows="4"
@@ -29,26 +22,30 @@
     <strong>Research Question:</strong>
     <p>{{ response.research_question }}</p>
   </div>
-  <div class="response-box">
-    <strong>Population:</strong>
-    <p>{{ response.P }}</p>
+  {% if response.P %}
+  <div class="pico-grid">
+    <div class="response-box">
+      <strong>Population:</strong>
+      <p>{{ response.P }}</p>
+    </div>
+    <div class="response-box">
+      <strong>Intervention:</strong>
+      <p>{{ response.I }}</p>
+    </div>
+    <div class="response-box">
+      <strong>Comparator:</strong>
+      <p>{{ response.C }}</p>
+    </div>
+    <div class="response-box">
+      <strong>Outcome:</strong>
+      <p>{{ response.O }}</p>
+    </div>
+    <div class="response-box comment-box">
+      <strong>Comment:</strong>
+      <p>{{ response.comment }}</p>
+    </div>
   </div>
-  <div class="response-box">
-    <strong>Intervention:</strong>
-    <p>{{ response.I }}</p>
-  </div>
-  <div class="response-box">
-    <strong>Comparator:</strong>
-    <p>{{ response.C }}</p>
-  </div>
-  <div class="response-box">
-    <strong>Outcome:</strong>
-    <p>{{ response.O }}</p>
-  </div>
-  <div class="response-box">
-    <strong>Comment:</strong>
-    <p>{{ response.comment }}</p>
-  </div>
+  {% endif %}
   {% endif %}
 </body>
 
